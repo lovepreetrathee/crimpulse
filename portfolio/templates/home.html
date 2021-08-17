@@ -1,0 +1,51 @@
+{%extends "layout.html"%}
+{%block heading%}
+    <div class="container grey-text text-lighten-5">LOGIN:</div>    
+{%endblock%}
+{%block content%}
+
+
+<div class="container">
+    <form method="POST" action="">
+        {{form.hidden_tag()}}
+            <div class="row card-panel ">
+                <div class="form-group  col-s6">
+                    {{form.username.label(class="form-control-label")}}
+                    {% if form.username.errors %}
+                    {{ form.username(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid">
+                        {% for error in form.username.errors %}
+                            <span class="red-text">{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.username(class="form-control form-control-lg") }}
+                {% endif %}
+
+                </div>
+
+                <div class="form-group col-s6">
+                    {{form.password.label(class="form-control-label")}}
+                    {{form.password(class="form-control form-control-lg")}}
+
+                </div>
+            </div>
+        <div>
+            {{form.submit(class="btn btn-outline-info")}}
+        </div>
+        
+        <div style = "margin-top: 10px;">
+            <div class = "grey-text text-lighten-5">
+                Need an account?
+                <a href="{{url_for('register')}}" >Sign Up</a>
+            </div> 
+            
+        </div>
+            
+        
+            
+        
+        
+    </form>
+</div>
+{%endblock%}

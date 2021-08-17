@@ -1,0 +1,32 @@
+body {
+    font-family: Nunito;
+    font-size: 24px;
+}
+
+h1
+{
+    font-size: 48px;
+    font-family: Nunito;
+}
+
+p
+{
+    font-size: 24px;
+    font-family: Nunito;
+}
+
+.grid_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.item1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+.item2 {
+grid-column-start: 4;
+grid-column-end: 6;
+}
